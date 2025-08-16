@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stop HT — Espace Presse</title>
+  <meta name="description" content="Espace presse de l'association Stop HT : dossier, communiqué, chiffres clés, contacts." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --brand:#0d6aa2; --brand-2:#0a4f75; }
+    html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+    .container{max-width:1200px}
+    .glass{background:rgba(255,255,255,.08);backdrop-filter:saturate(140%) blur(6px)}
+    .navlink-active{ color: rgb(103 232 249); }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-50 antialiased">
+<header class="sticky top-0 z-50 border-b border-slate-800/60 bg-slate-950/80 backdrop-blur">
+  <div class="container mx-auto px-4 py-3 flex items-center gap-4">
+    <a href="index.html" class="flex items-center gap-2 font-extrabold tracking-tight text-lg">
+      <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-500/15 ring-1 ring-cyan-400/30">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-cyan-300"><path d="M11 21v-7H4l9-11v7h7l-9 11z"/></svg>
+      </span>
+      Stop HT
+    </a>
+    <nav class="ml-auto hidden md:block">
+      <ul class="flex gap-2 text-sm">
+        <li><a class="navlink" data-id="index" href="index.html">Accueil</a></li>
+        <li><a class="navlink" data-id="association" href="association.html">L'association</a></li>
+        <li><a class="navlink" data-id="outils" href="outils.html">Outils</a></li>
+        <li><a class="navlink" data-id="observatoire" href="observatoire.html">Observatoire</a></li>
+        <li><a class="navlink" data-id="adherer" href="adherer.html">Nous soutenir</a></li>
+        <li><a class="navlink" data-id="contact" href="contact.html">Contact</a></li>
+        <li><a class="navlink" data-id="presse" href="presse.html">Presse</a></li>
+      </ul>
+    </nav>
+    <button id="menuBtn" class="md:hidden rounded-lg p-2 ring-1 ring-slate-700 hover:bg-slate-800" aria-label="Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div id="mobileNav" class="md:hidden hidden border-t border-slate-800/60">
+    <div class="container mx-auto px-4 py-3 grid gap-2 text-sm">
+      <a class="navlink py-1" data-id="index" href="index.html">Accueil</a>
+      <a class="navlink py-1" data-id="association" href="association.html">L'association</a>
+      <a class="navlink py-1" data-id="outils" href="outils.html">Outils</a>
+      <a class="navlink py-1" data-id="observatoire" href="observatoire.html">Observatoire</a>
+      <a class="navlink py-1" data-id="adherer" href="adherer.html">Nous soutenir</a>
+      <a class="navlink py-1" data-id="contact" href="contact.html">Contact</a>
+      <a class="navlink py-1" data-id="presse" href="presse.html">Presse</a>
+    </div>
+  </div>
+</header>
+
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-br from-[var(--brand-2)] to-[var(--brand)]"></div>
+  <div class="container mx-auto px-4 py-14 md:py-20">
+    <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Espace <span class="text-cyan-300">Presse</span></h1>
+    <p class="mt-3 text-slate-200/90 max-w-3xl">Retrouvez notre dossier et communiqué, des chiffres clés, des visuels libres de droits pour la presse, ainsi que nos contacts presse.</p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a href="#telechargements" class="rounded-xl bg-white/10 px-4 py-2 ring-1 ring-white/20 hover:bg-white/15">Téléchargements</a>
+      <a href="#chiffres" class="rounded-xl bg-cyan-400/20 px-4 py-2 ring-1 ring-cyan-400/30 hover:bg-cyan-400/30">Chiffres clés</a>
+      <a href="#contacts" class="rounded-xl bg-emerald-400/20 px-4 py-2 ring-1 ring-emerald-400/30 hover:bg-emerald-400/30">Contacts presse</a>
+    </div>
+  </div>
+</section>
+
+<section id="resume" class="py-14 border-t border-slate-800/60">
+  <div class="container mx-auto px-4 grid md:grid-cols-3 gap-6">
+    <article class="rounded-2xl bg-slate-900/60 p-5 ring-1 ring-white/10 md:col-span-2">
+      <h2 class="text-xl font-semibold">En bref</h2>
+      <p class="mt-2 text-slate-300">Stop HT est une association loi 1901 qui aide les particuliers à <strong>sécuriser leurs travaux</strong> et qui <strong>valorise les artisans responsables</strong>. Notre approche : prévention des litiges, accompagnement du devis à la réception, et transparence via des outils concrets.</p>
+      <ul class="mt-4 grid gap-2 text-sm text-slate-300">
+        <li>• Outils pratiques : checklist, album photo intelligent, suivi & réception, annuaire d’artisans.</li>
+        <li>• Médiation et appui au litige (constitution de dossier, activation des garanties).</li>
+        <li>• Observatoire des pratiques et veille du secteur.</li>
+      </ul>
+    </article>
+    <aside class="rounded-2xl bg-slate-900/60 p-5 ring-1 ring-white/10">
+      <h3 class="font-semibold">Faits saillants</h3>
+      <ul class="mt-2 text-sm text-slate-300 space-y-1">
+        <li>✔ Association créée en 2025</li>
+        <li>✔ Cœur de mission : prévention & transparence</li>
+        <li>✔ Publics : particuliers, collectivités, artisans</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section id="telechargements" class="py-14 border-t border-slate-800/60">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-extrabold">Dossier & Communiqué</h2>
+    <p class="mt-2 text-slate-300">Téléchargez les documents presse (déposez les fichiers dans <code>/docs</code> de votre site).</p>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <a class="rounded-2xl bg-slate-900/60 p-5 ring-1 ring-white/10 hover:bg-slate-900/70" href="docs/dossier-presse.docx" download>
+        <h3 class="font-semibold">Dossier de presse</h3>
+        <p class="mt-1 text-sm text-slate-400">Version .docx — “dossier presse.docx”</p>
+      </a>
+      <a class="rounded-2xl bg-slate-900/60 p-5 ring-1 ring-white/10 hover:bg-slate-900/70" href="docs/site-web.docx" download>
+        <h3 class="font-semibold">Synthèse “Site web”</h3>
+        <p class="mt-1 text-sm text-slate-400">Version .docx — “Site web.docx”</p>
+      </a>
+      <a class="rounded-2xl bg-slate-900/60 p-5 ring-1 ring-white/10 hover:bg-slate-900/70" href="docs/visibilite-artisans.docx" download>
+        <h3 class="font-semibold">Note “Visibilité des artisans”</h3>
+        <p class="mt-1 text-sm text-slate-400">Version .docx — “Visibilité des artisans.docx”</p>
+      </a>
+    </div>
+    <p class="mt-3 text-xs text-slate-400">💡 Conseil : renommez vos fichiers sans espaces (ex. <code>dossier-presse.docx</code>) pour des liens plus propres.</p>
+    <div class="mt-6 rounded-2xl bg-slate-900/60 p-5 ring-1 ring-white/10">
+      <h3 class="font-semibold">Kit média (logos & visuels)</h3>
+      <p class="mt-1 text-sm text-slate-400">Ajoutez ici une archive (ex. <code>docs/kit-media.zip</code>) contenant logo (SVG/PNG), bannières, captures d’écran.</p>
+      <a class="mt-3 inline-flex rounded-lg bg-white/10 px-4 py-2 ring-1 ring-white/15" href="docs/kit-media.zip">Télécharger le kit média</a>
+    </div>
+  </div>
+</section>
+
+<section id="chiffres" class="py-14 border-t border-slate-800/60">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-extrabold">Chiffres clés</h2>
+    <div class="mt-6 grid md:grid-cols-3 gap-5">
+      <div class="rounded-2xl bg-slate-900/60 p-5 ring-1 ring-white/10">
+        <p class="text-4xl font-extrabold">~1 M</p>
+        <p class="text-sm text-slate-400">Autorisations d’urbanisme/an (ordre de grandeur)</p>
+      </div>
+      <div class="rounded-2xl bg-slate-900/60 p-5 ring-1 ring-white/10">
+        <p class="text-4xl font-extrabold">60k</p>
+        <p class="text-sm text-slate-400">Plaintes BTP (ordre de grandeur, DGCCRF)</p>
+      </div>
+      <div class="rounded-2xl bg-slate-900/60 p-5 ring-1 ring-white/10">
+        <p class="text-4xl font-extrabold">45%</p>
+        <p class="text-sm text-slate-400">Part des litiges impliquant des malfaçons (retours de terrain)</p>
+      </div>
+    </div>
+    <p class="mt-3 text-xs text-slate-400">🔎 Sources/ordres de grandeur : préciser/mettre à jour vos références lors de la mise en production.</p>
+  </div>
+</section>
+
+<section id="citations" class="py-14 border-t border-slate-800/60">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-extrabold">Citations</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-5">
+      <blockquote class="rounded-2xl bg-slate-900/60 p-5 ring-1 ring-white/10">
+        <p class="text-slate-200">“Notre priorité est d’éviter les chantiers qui tournent mal, en outillant les particuliers avant, pendant et après les travaux.”</p>
+        <footer class="mt-2 text-sm text-slate-400">— Jean Dupont, Président</footer>
+      </blockquote>
+      <blockquote class="rounded-2xl bg-slate-900/60 p-5 ring-1 ring-white/10">
+        <p class="text-slate-200">“La transparence valorise les artisans sérieux : on met en avant les bonnes pratiques et les preuves concrètes.”</p>
+        <footer class="mt-2 text-sm text-slate-400">— Marie Lefèvre, Communication</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="visuels" class="py-14 border-t border-slate-800/60">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-extrabold">Visuels presse</h2>
+    <p class="mt-2 text-slate-300">Ajoutez ici des vignettes (logos, captures) pointant vers des versions HD.</p>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <a href="docs/logo-stopht.png" class="block rounded-xl overflow-hidden ring-1 ring-white/10 bg-slate-900/50">
+        <img src="docs/logo-stopht.png" alt="Logo Stop HT" class="w-full h-40 object-contain p-6 bg-slate-900/30" />
+        <div class="px-4 py-3 text-sm text-slate-300">Logo (PNG)</div>
+      </a>
+      <a href="docs/capture-accueil.png" class="block rounded-xl overflow-hidden ring-1 ring-white/10 bg-slate-900/50">
+        <img src="docs/capture-accueil.png" alt="Capture page d’accueil" class="w-full h-40 object-cover" />
+        <div class="px-4 py-3 text-sm text-slate-300">Capture — Accueil</div>
+      </a>
+      <a href="docs/capture-outils.png" class="block rounded-xl overflow-hidden ring-1 ring-white/10 bg-slate-900/50">
+        <img src="docs/capture-outils.png" alt="Capture page outils" class="w-full h-40 object-cover" />
+        <div class="px-4 py-3 text-sm text-slate-300">Capture — Outils</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" class="py-14 border-t border-slate-800/60">
+  <div class="container mx-auto px-4 grid md:grid-cols-2 gap-6">
+    <div class="rounded-2xl bg-slate-900/60 p-5 ring-1 ring-white/10">
+      <h2 class="text-2xl font-extrabold">Contacts presse</h2>
+      <ul class="mt-3 text-sm text-slate-300 space-y-1">
+        <li>📧 presse@stopht.fr</li>
+        <li>📞 01 23 45 67 89</li>
+        <li>📍 12 rue des Travaux Sécurisés, 75015 Paris</li>
+        <li>🕘 Lun–Ven, 9h–18h</li>
+      </ul>
+    </div>
+    <div class="rounded-2xl glass p-5 ring-1 ring-white/10">
+      <h3 class="font-semibold">Demandes d’interview & informations</h3>
+      <p class="mt-2 text-sm text-slate-300">Pour des interviews, données complémentaires, ou accès à nos outils : contactez-nous par email avec vos disponibilités et votre ligne éditoriale.</p>
+      <a href="mailto:presse@stopht.fr" class="mt-3 inline-flex rounded-lg bg-white/10 px-4 py-2 ring-1 ring-white/15">Écrire à la presse</a>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-slate-800/60 py-10 text-sm text-slate-400">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+    <p>© <span id="year"></span> Stop HT — Association loi 1901</p>
+    <nav class="flex gap-3">
+      <a class="underline decoration-dotted" href="mentions.html">Mentions légales</a>
+      <a class="underline decoration-dotted" href="rgpd.html">RGPD</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Menu mobile
+  const btn = document.getElementById('menuBtn');
+  const mobile = document.getElementById('mobileNav');
+  btn?.addEventListener('click', () => mobile.classList.toggle('hidden'));
+  // Activer l’onglet courant
+  (function() {
+    const file = location.pathname.split('/').pop() || 'presse.html';
+    const id = file.replace('.html','');
+    document.querySelectorAll('.navlink').forEach(a => {
+      a.classList.toggle('navlink-active', a.dataset.id===id);
+    });
+  })();
+  // Année footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
