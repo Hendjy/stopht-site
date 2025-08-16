@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stop HT — Annuaire d'artisans (beta)</title>
+  <meta name="description" content="Annuaire d'artisans avec filtres (métier, ville, taux de litiges)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --brand:#0d6aa2; --brand-2:#0a4f75; }
+    html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+    .container{max-width:1200px}
+    .glass{background:rgba(255,255,255,.08);backdrop-filter:saturate(140%) blur(6px)}
+    .navlink-active{ color: rgb(103 232 249); }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-50 antialiased">
+<header class="sticky top-0 z-50 border-b border-slate-800/60 bg-slate-950/80 backdrop-blur">
+  <div class="container mx-auto px-4 py-3 flex items-center gap-4">
+    <a href="index.html" class="flex items-center gap-2 font-extrabold tracking-tight text-lg">
+      <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-500/15 ring-1 ring-cyan-400/30">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-cyan-300"><path d="M11 21v-7H4l9-11v7h7l-9 11z"/></svg>
+      </span>
+      Stop HT
+    </a>
+    <nav class="ml-auto hidden md:block">
+      <ul class="flex gap-2 text-sm">
+        <li><a class="navlink" data-id="index" href="index.html">Accueil</a></li>
+        <li><a class="navlink" data-id="association" href="association.html">L'association</a></li>
+        <li><a class="navlink" data-id="outils" href="outils.html">Outils</a></li>
+        <li><a class="navlink" data-id="observatoire" href="observatoire.html">Observatoire</a></li>
+        <li><a class="navlink" data-id="adherer" href="adherer.html">Nous soutenir</a></li>
+        <li><a class="navlink" data-id="contact" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="menuBtn" class="md:hidden rounded-lg p-2 ring-1 ring-slate-700 hover:bg-slate-800" aria-label="Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div id="mobileNav" class="md:hidden hidden border-t border-slate-800/60">
+    <div class="container mx-auto px-4 py-3 grid gap-2 text-sm">
+      <a class="navlink py-1" data-id="index" href="index.html">Accueil</a>
+      <a class="navlink py-1" data-id="association" href="association.html">L'association</a>
+      <a class="navlink py-1" data-id="outils" href="outils.html">Outils</a>
+      <a class="navlink py-1" data-id="observatoire" href="observatoire.html">Observatoire</a>
+      <a class="navlink py-1" data-id="adherer" href="adherer.html">Nous soutenir</a>
+      <a class="navlink py-1" data-id="contact" href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="py-16 border-t border-slate-800/60">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl md:text-4xl font-extrabold">Annuaire d'artisans (beta)</h2>
+    <p class="mt-3 text-slate-300">Exemple fictif avec données statiques. Remplacez le tableau <code>data[]</code> par vos entrées réelles (JSON/API).</p>
+
+    <div class="mt-6 grid gap-4">
+      <!-- Filtres -->
+      <div class="rounded-2xl bg-slate-900/60 p-5 ring-1 ring-white/10">
+        <div class="grid md:grid-cols-4 gap-3 items-end">
+          <label class="text-sm">Métier
+            <select id="filter-metier" class="w-full rounded-lg bg-slate-900/70 p-2 ring-1 ring-white/10">
+              <option value="">Tous</option>
+              <option>Maçon</option>
+              <option>Plombier</option>
+              <option>Électricien</option>
+            </select>
+          </label>
+          <label class="text-sm">Ville
+            <input id="filter-ville" class="w-full rounded-lg bg-slate-900/70 p-2 ring-1 ring-white/10" placeholder="ex: Lyon" />
+          </label>
+          <label class="text-sm">Max. litiges (%)
+            <input id="filter-litiges" type="number" min="0" max="100" class="w-full rounded-lg bg-slate-900/70 p-2 ring-1 ring-white/10" placeholder="50" />
+          </label>
+          <button id="btn-filtrer" class="rounded-lg bg-cyan-400/20 px-4 py-2 ring-1 ring-cyan-400/30 hover:bg-cyan-400/30">Filtrer</button>
+        </div>
+      </div>
+
+      <!-- Résultats -->
+      <div id="cards" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-slate-800/60 py-10 text-sm text-slate-400">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+    <p>© <span id="year"></span> Stop HT — Association loi 1901</p>
+    <nav class="flex gap-3">
+      <a class="underline decoration-dotted" href="mentions.html">Mentions légales</a>
+      <a class="underline decoration-dotted" href="rgpd.html">RGPD</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+// Données exemples (remplacez par vos données réelles)
+const data = [
+  { siret:"12345678900011", nom:"BâtiSolide", metier:"Maçon",       ville:"Lyon",     litiges:8,  certifications:["Qualibat 2111"],      note:4.5 },
+  { siret:"22345678900022", nom:"Plomb'Azur", metier:"Plombier",   ville:"Nice",     litiges:5,  certifications:["RGE"],               note:4.2 },
+  { siret:"32345678900033", nom:"Volt&Co",    metier:"Électricien",ville:"Paris",    litiges:12, certifications:["Qualifelec"],        note:4.0 },
+  { siret:"42345678900044", nom:"ProMurs",    metier:"Maçon",       ville:"Toulouse", litiges:3,  certifications:["Qualibat 2112","RGE"], note:4.7 }
+];
+
+function card(x){
+  return `
+  <article class="rounded-2xl bg-slate-900/60 p-5 ring-1 ring-white/10">
+    <div class="flex items-center justify-between">
+      <h3 class="font-semibold">${x.nom}</h3>
+      <span class="text-xs text-slate-400">Note : ${x.note}/5</span>
+    </div>
+    <p class="mt-1 text-sm text-slate-300">${x.metier} — ${x.ville}</p>
+    <p class="text-xs text-slate-400">SIRET : ${x.siret}</p>
+    <p class="mt-2 text-xs text-slate-400">Certifications : ${x.certifications.join(", ")}</p>
+    <div class="mt-3 text-sm"><span class="rounded-md bg-white/10 px-2 py-1 ring-1 ring-white/15">Litiges : ${x.litiges}%</span></div>
+    <a class="mt-4 inline-flex text-sm underline decoration-dotted" href="#">Voir la fiche</a>
+  </article>`;
+}
+
+function render(list){
+  const wrap = document.getElementById('cards');
+  wrap.innerHTML = list.map(card).join('') || `
+    <div class="text-slate-400">Aucun résultat ne correspond aux filtres.</div>`;
+}
+
+function filtrer(){
+  const metier = document.getElementById('filter-metier').value;
+  const ville  = document.getElementById('filter-ville').value.trim().toLowerCase();
+  const litiges = parseFloat(document.getElementById('filter-litiges').value);
+  let out = data.slice();
+  if (metier) out = out.filter(x => x.metier===metier);
+  if (ville)  out = out.filter(x => x.ville.toLowerCase().includes(ville));
+  if (!isNaN(litiges)) out = out.filter(x => x.litiges <= litiges);
+  render(out);
+}
+
+document.getElementById('btn-filtrer').addEventListener('click', filtrer);
+render(data);
+
+// UI : menu & nav active
+const btn = document.getElementById('menuBtn');
+const mobile = document.getElementById('mobileNav');
+btn?.addEventListener('click', () => mobile.classList.toggle('hidden'));
+(function() {
+  const file = location.pathname.split('/').pop() || 'artisans.html';
+  const id = file.replace('.html','');
+  document.querySelectorAll('.navlink').forEach(a => {
+    a.classList.toggle('navlink-active', a.dataset.id===id);
+  });
+})();
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
