@@ -1,0 +1,4 @@
+[
+  { "siret":"12345678900011","name":"BâtiSolide","trade":"Maçon","city":"Lyon","certifications":["Qualibat 2111"],"disputes_percent":8,"rating":4.5 },
+  { "siret":"22345678900022","name":"Plomb'Azur","trade":"Plombier","city":"Nice","certifications":["RGE"],"disputes_percent":5,"rating":4.2 }
+]
