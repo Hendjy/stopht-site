@@ -1,0 +1,4 @@
+[
+  { "title": "Checklist de démarrage", "summary": "Pièces, assurances, calendrier.", "deliverable": "PDF", "link": "", "visible": true, "sort_order": 1 },
+  { "title": "Sélection des artisans", "summary": "SIRET, certifs, références.", "deliverable": "Fiche", "link": "artisans.html", "visible": true, "sort_order": 2 }
+]
