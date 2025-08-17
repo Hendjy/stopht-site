@@ -1,0 +1,4 @@
+[
+  { "label": "Autorisations d'urbanisme/an", "value": "~1 M", "description": "", "visible": true, "sort_order": 1 },
+  { "label": "Plaintes BTP (ordre de grandeur)", "value": "60k", "description": "Source: DGCCRF (à préciser)", "visible": true, "sort_order": 2 }
+]
